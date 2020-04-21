@@ -1,0 +1,27 @@
+<header>
+  <nav>
+    <ul>
+      <h3>Navigation</h3>
+      <li>
+        <a href="/">Home</a></li>
+      <li>
+        <a href="/books">View All Books</a>
+      </li>
+      <li>
+        <a href="/books/new" style="color: red; font-weight: bold">Create a New Book</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <a href="/books/<%= book.id %>"><%= book.title %></a>
+      <br>
+      <%= book.author %>
+      <br>
+      <%= book.snippet %>
+    </li>
+  <% end %>
+</ul>
