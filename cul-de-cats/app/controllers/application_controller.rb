@@ -12,4 +12,13 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  post "/check-meow" do
+    input = params[:meow]
+    if Cat.meow_is_real(input)
+      p "SUCCESS, IT'S A MEOW"
+    else
+      p "BOOOO, NO MEOW DETECTED"
+    end
+  end
+
 end

@@ -1,0 +1,7 @@
+<%= @cat.name %>
+
+<h3>This cat isn't just a <%= @cat.coarseness %>, <%= @cat.claw_count %>-clawed feline... this cat has RESPONSIBILITIES, yo:</h3>
+
+<% @cat.yards.each do |yard| %>
+  <p><a href="/yards/<%= yard.id %>"><%= yard.title %></a></p>
+<% end%>

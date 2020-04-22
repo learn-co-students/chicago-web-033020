@@ -14,10 +14,22 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
+
     <div class="wrapper">
+      <p><%= Date.today.strftime("Today is %A, %B %d") %></p>
+      <a href="/yards">All Yards</a>
+      <a href="/cats">All Cats</a>
+      <br>
+      <br>
 
         <%= yield %>
 
+      <h3>Meow Checker: Is the meow really a meow?</h3>
+      <form action="/check-meow" method="post">
+        Meow to check: <input type="text" name="meow">
+        <br>
+        <input type="submit" value="Check!">
+      </form>
       <footer class="branding">
         <small>&copy; 2020 <strong>CulDeCats</strong></small>
       </footer>

@@ -23,5 +23,7 @@ class YardsController < ApplicationController
   get '/yards/:id' do
     @yard = Yard.find(params[:id])
     @yard.title
+    erb :'yards/show'
+
   end
 end
