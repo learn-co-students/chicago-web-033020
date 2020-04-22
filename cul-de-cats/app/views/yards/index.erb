@@ -1,0 +1,11 @@
+<h1>Yards</h1>
+
+<a href="/yards/new">Create New Yard</a>
+
+<% @yards.each do |yard| %>
+  <p>
+    <a href="/yards/<%= yard.id %>">
+      <%= yard.title %>
+    </a>
+  </p>
+<% end %>
