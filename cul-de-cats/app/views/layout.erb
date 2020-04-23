@@ -16,15 +16,21 @@
   <body>
 
     <div class="wrapper">
-      <p><%= Date.today.strftime("Today is %A, %B %d") %></p>
+
+      <p>Welcome to Cul-De-Cats. <%= Date.today.strftime("Today is %A, %B %d.") %></p>
       <a href="/yards">All Yards</a>
       <a href="/cats">All Cats</a>
+      <strong><a href="/cats/new">Create Cat</a></strong>
       <br>
+      <div style="border-top:1px solid grey; margin-top: 10px"></div>
       <br>
 
         <%= yield %>
 
-      <h3>Meow Checker: Is the meow really a meow?</h3>
+      <br>
+      <br>
+
+      <p><strong>Meow Checker: Is the meow really a meow?</strong></p>
       <form action="/check-meow" method="post">
         Meow to check: <input type="text" name="meow">
         <br>

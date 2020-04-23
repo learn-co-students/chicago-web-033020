@@ -1,17 +1,23 @@
 <h1>Create a Cat</h1>
 
+<% if @cat.errors %>
+  <% @cat.errors.full_messages.each do |error| %>
+    <p style="color: red"><%= error %></p>
+  <% end%>
+<% end %>
+
 <form action="/cats" method="post">
   <p>
     <label for="name">Name:</label>
-    <input id="name" name="name" type="text">
+    <input id="name" name="name" type="text" value="<%= @cat.name %>">
   </p>
   <p>
     <label for="claw_count">Claw Count:</label>
-    <input id="claw_count" name="claw_count" type="number">
+    <input id="claw_count" name="claw_count" type="number" value="<%= @cat.claw_count %>">
   </p>
   <p>
     <label for="coarseness">Coarseness:</label>
-    <input id="coarseness" name="coarseness" type="text">
+    <input id="coarseness" name="coarseness" type="text" value="<%= @cat.coarseness %>">
   </p>
   <input type="submit" value="Get to Prowlin'!">
 </form>

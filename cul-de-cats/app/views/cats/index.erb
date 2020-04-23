@@ -1,3 +1,8 @@
+<h1>All Cats</h1>
+
+<strong><a href="/cats/new">Create Cat</a></strong>
+<br>
+<br>
 <% @cats.each do |cat| %>
   <p><a href="/cats/<%= cat.id %>"><%= cat.name %> the <%= cat.coarseness %></a></p>
 <% end %>
