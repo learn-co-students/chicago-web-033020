@@ -1,0 +1,8 @@
+<h1>Yards</h1>
+
+<strong><a href="/yards/new">Create New Yard</a></strong>
+<br>
+<br>
+<% @yards.each do |yard| %>
+  <p><%= link_to yard.title, yard %></p>
+<% end %>

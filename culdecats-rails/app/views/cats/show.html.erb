@@ -1,0 +1,9 @@
+<h1><%= @cat.name %></h1>
+
+<h3>This cat isn't just a <%= @cat.coarseness %>, <%= @cat.claw_count %>-clawed feline... this cat has RESPONSIBILITIES, yo:</h3>
+
+<% @cat.yards.each do |yard| %>
+  <p><%= link_to(yard.title, yard) %></p>
+<% end %>
+
+<%= link_to "all cats", cats_path %>

@@ -1,0 +1,17 @@
+<h1>Create a YARD</h1>
+
+<form action="/yards" method="POST">
+  <%= token_tag %>
+  <label for="title">Title:</label>
+  <input name="yard[title]" id="title" type="text">
+  <label for="size">Size:</label>
+  <input name="yard[size]" id="size" type="text" placeholder="spat, scrimmage, battle, war, etc...">
+  <br>
+  <label for="cat_id">Cat:</label>
+  <select name="yard[cat_id]" id="cat_id">
+    <% @cats.each do |cat| %>
+      <option value="<%= cat.id %>"><%= cat.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Make Yard">
+</form>
