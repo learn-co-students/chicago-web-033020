@@ -1,5 +1,6 @@
 <h1>Create a YARD</h1>
 
+<!--
 <form action="/yards" method="POST">
   <%= token_tag %>
   <label for="title">Title:</label>
@@ -15,3 +16,41 @@
   </select>
   <input type="submit" value="Make Yard">
 </form>
+-->
+<!-- form_with url: "/yards" -->
+<!--
+<%= form_tag "/yards" do %>
+  <%= label_tag('yard[title]', "Title:") %>
+  <%= text_field_tag('yard[title]') %>
+  <br>
+  <%= label_tag('yard[size]', "Size:") %>
+  <%= text_field_tag('yard[size]') %>
+  <br>
+  <%= label_tag('yard[cat_id]', "Cat:") %>
+  <select name="yard[cat_id]" id="yard_cat_id">
+    <% @cats.each do |cat| %>
+      <option value="<%= cat.id %>"><%= cat.name %></option>
+    <% end %>
+  </select>
+  <br>
+  <%= submit_tag("Create Yard") %>
+<% end %>
+-->
+
+<!-- form_with model: @yard -->
+<%= form_for @yard do |f| %>
+  <%= f.label :title, "Title:" %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :size, "Size:" %>
+  <%= f.text_field :size %>
+  <br>
+  <%= f.label :cat_id, "Cat:" %>
+  <select name="yard[cat_id]" id="yard_cat_id">
+    <% @cats.each do |cat| %>
+      <option value="<%= cat.id %>"><%= cat.name %></option>
+    <% end %>
+  </select>
+  <br>
+  <%= f.submit %>
+<% end %>
