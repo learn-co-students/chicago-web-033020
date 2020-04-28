@@ -19,7 +19,7 @@
 -->
 <!-- form_with url: "/yards" -->
 <!--
-<%= form_tag "/yards" do %>
+<%= form_tag yards_path do %>
   <%= label_tag('yard[title]', "Title:") %>
   <%= text_field_tag('yard[title]') %>
   <br>
@@ -27,30 +27,11 @@
   <%= text_field_tag('yard[size]') %>
   <br>
   <%= label_tag('yard[cat_id]', "Cat:") %>
-  <select name="yard[cat_id]" id="yard_cat_id">
-    <% @cats.each do |cat| %>
-      <option value="<%= cat.id %>"><%= cat.name %></option>
-    <% end %>
-  </select>
+  <%= select_tag 'yard[cat_id]', options_from_collection_for_select(@cats, "id", "name") %>
   <br>
   <%= submit_tag("Create Yard") %>
 <% end %>
 -->
 
 <!-- form_with model: @yard -->
-<%= form_for @yard do |f| %>
-  <%= f.label :title, "Title:" %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :size, "Size:" %>
-  <%= f.text_field :size %>
-  <br>
-  <%= f.label :cat_id, "Cat:" %>
-  <select name="yard[cat_id]" id="yard_cat_id">
-    <% @cats.each do |cat| %>
-      <option value="<%= cat.id %>"><%= cat.name %></option>
-    <% end %>
-  </select>
-  <br>
-  <%= f.submit %>
-<% end %>
+<%= render partial: "form", locals: {yard: @yard, cats: @cats} %>

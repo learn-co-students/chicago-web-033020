@@ -1,0 +1,12 @@
+<%= form_for yard do |f| %>
+  <%= f.label :title, "Title:" %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :size, "Size:" %>
+  <%= f.text_field :size %>
+  <br>
+  <%= f.label :cat_id, "Cat:" %>
+  <%= f.collection_select :cat_id, cats, :id, :name %>
+  <br>
+  <%= f.submit %>
+<% end %>

@@ -4,5 +4,5 @@
 <br>
 <br>
 <% @yards.each do |yard| %>
-  <p><%= link_to yard.title, yard %></p>
+  <p><%= link_to yard.title, yard %> - <%= link_to "Edit", edit_yard_path(yard)%></p>
 <% end %>
