@@ -1,3 +1,16 @@
+
+<% if flash[:errors] && flash[:errors].any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(flash[:errors].count, "error") %> prohibited this article from being saved:</h2>
+ 
+    <ul>
+    <% flash[:errors].each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for yard do |f| %>
   <%= f.label :title, "Title:" %>
   <%= f.text_field :title %>

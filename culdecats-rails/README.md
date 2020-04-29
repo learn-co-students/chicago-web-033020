@@ -1,24 +1,14 @@
-# README
+# OBJECTIVES
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Review the create/edit workflow and how validations work
+Review error handling, Sinatra Style
+Amp it using Rails' `flash` hash (it's semi-magical!)
+Explore towards a more complex model domain for the app overall (meta)
 
-Things you may want to cover:
+# NESTED ROUTES/FORMS FLOW
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Start at cat show
+travel to a new house form that
+- keeps track of the cat that the house will belong to somehow
+- keeps track of the various yards the cat will be watching
+- on submit, take me to a house show page that lists the yards

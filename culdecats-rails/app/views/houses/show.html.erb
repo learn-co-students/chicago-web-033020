@@ -1,0 +1,6 @@
+<h1> Yards belonging to <%= @house.name %> </h1>
+
+<% @house.yards.each do |yard| %>
+  <p><%= link_to yard.full_info, yard %></p>
+<% end %>
+

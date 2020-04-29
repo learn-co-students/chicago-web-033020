@@ -1,0 +1,20 @@
+<h1>Register a New House Territory for <%= @cat.name %></h1>
+
+<%= form_for [@cat, @house] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <br>
+  <%= f.fields_for :yards do |yard_fields| %>
+    <%= yard_fields.label :title %>
+    <%= yard_fields.text_field :title %>
+    <%= yard_fields.label :size %>
+    <%= yard_fields.text_field :size %>
+    <%= yard_fields.hidden_field :cat_id, value: @cat.id %>
+
+    <br>
+  <% end %>
+  <%= f.submit %>
+<% end %>

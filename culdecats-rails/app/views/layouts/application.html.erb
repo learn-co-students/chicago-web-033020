@@ -11,6 +11,8 @@
 
   <body>
     <p>Welcome to Cul-De-Cats. <%= Date.today.strftime("Today is %A, %B %d.") %></p>
+    <div id="affirms" style="color: green;"><%= flash[:affirms] %></div>
+    <div id="alerts" style="color: red;"><%= flash[:alerts] %></div>
     <%= yield %>
   </body>
 </html>

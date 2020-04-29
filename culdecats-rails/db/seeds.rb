@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Yard.destroy_all
 Cat.destroy_all
+House.destroy_all
 
 coarsenesses = ["rough", "wiry", "bristly", "gunky", "sandpapery"]
 
@@ -20,8 +21,14 @@ names.each do |name|
   Cat.create!(name: name, coarseness: coarsenesses.sample, claw_count: (rand(30) + 1))
 end
 
+jones = House.create!(name: "Jones'es", address: "123 Spring St")
+ruths = House.create!(name: "Ruths", address: "125 Spring St")
+blakes = House.create!(name: "Blakes", address: "555 Summer Ave")
+
+houses = [jones, ruths, blakes]
+
 yard_names.each do |y_name|
-  Yard.create!(title: y_name, size: sizes.sample, cat: Cat.all.sample)
+  Yard.create!(title: y_name, size: sizes.sample, cat: Cat.all.sample, house: houses.sample)
 end
 
 rando_yard = Yard.all.sample

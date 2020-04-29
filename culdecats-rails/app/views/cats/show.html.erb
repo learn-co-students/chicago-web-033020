@@ -7,3 +7,7 @@
 <% end %>
 
 <%= link_to "all cats", cats_path %>
+
+<br>
+
+<%= link_to "Assign A New House to #{@cat.name}", new_cat_house_path(@cat) %>
