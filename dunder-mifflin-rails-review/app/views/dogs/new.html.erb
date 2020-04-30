@@ -1,0 +1,22 @@
+<h1>New Dog</h1>
+
+<% @dog.errors.full_messages.each do |error| %>
+<h3><%= error %></h3>
+<% end %>
+
+<%= form_for @dog do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :breed %>
+  <%= f.text_field :breed %>
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+  <h2>Toys Info:</h2>
+  <%= f.fields_for :toys do |toys_fields| %>
+    <%= toys_fields.label :name %>
+    <%= toys_fields.text_field :name %>
+    <%= toys_fields.label :color %>
+    <%= toys_fields.text_field :color %>
+  <% end%>
+  <%= f.submit %>
+<% end %>

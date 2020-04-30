@@ -1,0 +1,19 @@
+<h1><%= @dog.name %></h1>
+
+<% @dog.attributes.each do |attribute, value| %>
+  <p><%= attribute.to_s.titleize %>: <%= value %></p>
+<% end %>
+
+<h2>Employees:</h2>
+
+<% @dog.employees.each do |emp| %>
+  <p><%= emp.first_name %></p>
+<% end %>
+
+<h2>Toys:</h2>
+
+<% @dog.toys.each do |toy| %>
+  <p><%= toy.description %></p>
+<% end %>
+
+<%= link_to "Back to all", dogs_path %>
