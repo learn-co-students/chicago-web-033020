@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :posts
 
   validates :email, presence: true, uniqueness: true
 
@@ -16,4 +17,8 @@ class User < ApplicationRecord
   #     return self
   #   end
   # end
+
+  def shortened_email
+    "#{email[0..4]}..."
+  end
 end

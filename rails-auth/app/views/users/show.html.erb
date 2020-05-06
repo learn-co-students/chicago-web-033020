@@ -1,5 +1,14 @@
-<h1><%= @user.email %></h1>
+<h1>
+  <% if is_current_user?(@user) %>
+    <%= @user.email %>
+  <% else %>
+    <%= @user.shortened_email %>
+  <% end %>
+</h1>
 
-<% if @current %>
-  (logged in as <%= @current.email %>)
+<% @user.posts.each do |post| %>
+  <h3><%= post.title %></h3>
+  <% if is_current_user?(@user) %>
+    <%= link_to 'edit', edit_post_path(post) %>
+  <% end %>
 <% end %>
