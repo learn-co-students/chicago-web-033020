@@ -1,0 +1,32 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "task": "clean room"
+    },
+    {
+      "id": 2,
+      "task": "water plants"
+    },
+    {
+      "task": "dust lamp",
+      "id": 3
+    },
+    {
+      "task": "make bed",
+      "id": 4
+    },
+    {
+      "task": "hello word",
+      "id": 5
+    },
+    {
+      "task": "hi",
+      "id": 6
+    },
+    {
+      "task": "yellow",
+      "id": 7
+    }
+  ]
+}
