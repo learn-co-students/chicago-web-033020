@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "task": "foobar",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "task": "xyz",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "task": "hello",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "task": "hello",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "task": "iouoiu",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "task": "this should be completed",
+      "completed": true,
+      "id": 6
+    }
+  ]
+}
